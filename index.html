@@ -25,6 +25,8 @@
     <link rel="preload" href="images/php.png" as="image">
     <link rel="preload" href="images/js.png" as="image">
     <link rel="preload" href="images/java.png" as="image">
+    <link rel="preload" href="images/face1.jpg" as="image">
+    <link rel="preload" href="images/face2.jpg" as="image">
   </head>
   <body>
     <header role="banner">
@@ -74,7 +76,7 @@
         <!-- Slide #4 - Stack -->
         <section>
           <div class="wrap">
-            <h1 class="text-context">Stack</h1>
+            <h1 class="text-context">My Stack</h1>
             <p class="text-subtitle">Libraries &amp; frameworks not included</p>
             <hr>
             <ul class="flexblock gallery">
@@ -129,7 +131,7 @@
         <!-- Slide #5 - Tech Activities -->
         <section>
           <div class="wrap size-50">
-            <h1>Tech Activities</h1>
+            <h1 class="text-context">My Tech Activities</h1>
             <hr>
             <div class="bg-white shadow">
               <ul class="flexblock reasons">
@@ -154,7 +156,122 @@
           </div>
         </section>
 
-        
+        <!-- Slide #6 - My Machine Learning Process -->
+        <section>
+          <div class="wrap">
+            <h1 class="text-context">My Machine Learning Process</h1>
+            <hr>
+            <ul class="flexblock steps">
+              <li>
+                <h2>State your goal</h2>
+                <p>As with any scientific process, there must be a goal in mind.</p>
+              </li>
+              <li>
+                <div class="process step-2"></div>
+                <h2>Get good data</h2>
+                <p>Machine Learning is all about data. You need to get good data to get good results.</p>
+              </li>
+              <li>
+                <div class="process step-3"></div>
+                <h2>Prepare the data</h2>
+                <p>Sometimes the data you get is not yet usable, so you have to process it to prepare it for use.</p>
+              </li>
+              <li>
+                <div class="process step-4"></div>
+                <h2>Feature research</h2>
+                <p>Research about which features of the thing being learned is best and can be used.</p>
+              </li>
+            </ul>
+            <ul class="flexblock steps">
+              <li>
+                <h2>Feature extraction</h2>
+                <p>Actually get the features from the data.</p>
+              </li>
+              <li>
+                <div class="process step-2"></div>
+                <h2>Algorithm research &amp; selection</h2>
+                <p>Research and choose the algorithms you can use for the problem.</p>
+              </li>
+              <li>
+                <div class="process step-3"></div>
+                <h2>Train &amp; evaluate model</h2>
+                <p>Train a mathematical model with the chosen algorithm and the gathered data and evaluate it to see if it achieves your goal.</p>
+              </li>
+              <li>
+                <div class="process step-4"></div>
+                <h2>Save &amp; use model</h2>
+                <p>Save the model and use it for later.</p>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Slide #7 - Prerequisites -->
+        <section>
+          <h1 class="content-center">Prerequisites</h1>
+          <hr>
+          <div class="wrap">
+            <div class="grid">
+              <div class="column">
+                <h2>With Docker (<em>Recommended</em>)</h2>
+                <ol>
+                  <li>Install Docker</li>
+                  <li>Run <code>git clone *Git repository here*</code> in your console</li>
+                  <li>Run <code>cd emotion-detection-py</code> in your console</li>
+                  <li>Run <code>docker pull johnpaulada/emotion-detection</code> or <code>docker load -i emotion-detection.tar</code>in your console</li>
+                  <li>Run <code>docker run -v `pwd`/app:/home/app -it johnpaulada/emotion-detection</code> in your console</li>
+                  <li>You're all set!</li>
+                </ul>
+              </div>
+              <div class="column">
+                <h2>Manual Install</h2>
+                <ol>
+                  <li>Install Python</li>
+                  <li>Install Pip</li>
+                  <li>Install Numpy</li>
+                  <li>Install scikit-learn</li>
+                  <li>Install OpenCV</li>
+                  <li>Install dlib</li>
+                  <li>Install imutils</li>
+                  <li>Run <code>git clone *Git repository here*</code> in your console</li>
+                  <li>Run <code>cd emotion-detection-py</code> in your console</li>
+                  <li>Run <code>docker run -v `pwd`/app:/home/app -it johnpaulada/emotion-detection</code> in your console</li>
+                  <li>You're all set!</li>                  
+                </ol>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide #8 - Goal -->
+        <section class="fullscreen">
+          <div class="card-50">
+            <figure>
+              <img src="images/face1.jpg" alt="Man Face">
+            </figure>
+            <div class="flex-content">
+              <h1 class="text-context">The Goal</h1>
+              <p>The goal here is to create a program that can read the emotions of faces present in images. <br>
+                We don't have to tell a machine what makes a happy face or a sad face. <br>
+                It can figure it out on its own from the data given to it. <br>
+                Because of that we need to get some data.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide #9 - Good Data -->
+        <section class="bg-white aligncenter">
+          <span class="background dark" style="background-image:url(images/face2.jpg)"></span>
+          <div class="wrap">
+            <h1 class="text-landing" style="font-size: 64pt;">Good Data</h1>
+            <hr>
+            <h4 class="text-serif">Good data is needed to get good results in Machine Learning. <br>
+              In this case we need to get a wide variety of faces and emotions. This is so we can avoid <strong>overfitting</strong>. <br>
+              This makes sure that our program can recognize emotion from a face it has not seen before. <br>
+              For this problem, I downloaded a bunch of different photos from Google that shows 4 types of emotions.</h4>
+          </div>
+        </section>
       </article>
     </main>
 
