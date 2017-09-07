@@ -22,6 +22,9 @@
     
     <!-- Asset Preloads -->
     <link rel="preload" href="images/paul-285358.jpg" as="image">
+    <link rel="preload" href="images/william-bout-264826.jpg" as="image">
+    <link rel="preload" href="images/drew-hays-206414.jpg" as="image">
+    <link rel="preload" href="images/pietro-jeng-266017.jpg" as="image">
     <link rel="preload" href="images/php.png" as="image">
     <link rel="preload" href="images/js.png" as="image">
     <link rel="preload" href="images/java.png" as="image">
@@ -39,7 +42,15 @@
               <svg class="fa-github">
                 <use xlink:href="#fa-github"></use>
               </svg>
-              <em>Practical Machine Learning with Python</em>
+              <em>Practical Machine Learning with Python Slides</em>
+            </a>
+          </li>
+          <li class="github">
+            <a rel="external" href="https://github.com/johnpaulada/emotion-detection-docker" title="Github">
+              <svg class="fa-github">
+                <use xlink:href="#fa-github"></use>
+              </svg>
+              <em>Emotion Detection App and Docker Image</em>
             </a>
           </li>
         </ul>
@@ -193,8 +204,8 @@
             </ul>
             <ul class="flexblock steps">
               <li>
-                <h2>Feature extraction</h2>
-                <p>Actually get the features from the data.</p>
+                <h2>Feature extraction and preprocessing</h2>
+                <p>Actually get the features from the data and preprocess the data to prepare for processing by the machine learning algorithm.</p>
               </li>
               <li>
                 <div class="process step-2"></div>
@@ -274,12 +285,14 @@
         <section class="bg-white aligncenter">
           <span class="background dark" style="background-image:url(images/face2.jpg)"></span>
           <div class="wrap">
-            <h1 class="text-landing" style="font-size: 64pt;">Good Data</h1>
+            <h1 class="text-landing" style="font-size: 64pt;"><strong>Good Data</strong></h1>
             <hr>
             <h4 class="text-serif">Good data is needed to get good results in Machine Learning. <br>
               In this case we need to get a wide variety of faces and emotions. This is so we can avoid <strong>overfitting</strong>. <br>
               This makes sure that our program can recognize emotion from a face it has not seen before. <br>
-              For this problem, I downloaded a bunch of different photos from Google that shows 4 types of emotions.</h4>
+              For this problem, I downloaded a bunch of different photos from <strong>Google</strong> that shows 4 types of emotions:<br>
+              <em>Angry, Sad, Neutral, and Happy</em>
+            </h4>
           </div>
         </section>
 
@@ -287,8 +300,7 @@
         <section class="fullscreen">
           <div class="card-50">
             <figure>
-              <!-- TODO: Change image -->
-              <img src="images/face1.jpg" alt="Man Face">
+              <img src="images/drew-hays-206414.jpg" alt="Man Face">
             </figure>
             <div class="flex-content">
               <h1 class="text-context">Feature Research</h1>
@@ -321,7 +333,7 @@
               <div class="wrap aligncenter">
                 <br> <br>
                 <h1 class="text-landing">Chosen Features</h1> <br>
-                <p class="text-subtitle">I chose to get the lines between points in the lips, eyes, and eyebrows along with their angles.</p>
+                <p class="text-subtitle">I chose to get the lines between points in the <strong>lips</strong>, <strong>eyes</strong>, and <strong>eyebrows</strong>. I then get the <strong>lengths</strong> and <strong>angles</strong> of these lines.</p>
               </div>
             </div>
             <figure>
@@ -332,36 +344,159 @@
         </section>
 
         <!-- Slide #13 - Feature Extraction -->
-        <section class="bg-white aligncenter">
-          <span class="background dark" style="background-image:url(images/face2.jpg)"></span>
+        <section class="bg-black aligncenter">
+          <span class="background dark" style="background-image:url(images/william-bout-264826.jpg)"></span>
           <div class="wrap">
             <h3 class="text-landing" style="font-size: 64pt;">Feature Extraction</h3>
             <hr>
-            <h4 class="text-serif">To get these points, I use a library called <code>dlib</code> and a custom face shape descriptor.</h4>
+            <h4 class="text-serif">
+              To get these points, I use a library called <code>dlib</code> and a custom face shape descriptor.<br>
+            </h4>
           </div>
         </section>
 
         <!-- Slide #14 - Algorithm Research -->
-        <!-- cards or flexblocks -->
+        <section class="bg-black aligncenter">
+          <span class="background dark" style="background-image:url(images/pietro-jeng-266017.jpg)"></span>
+          <div class="wrap">
+            <h3 class="text-landing" style="font-size: 64pt;">Algorithm Research</h3>
+            <hr>
+            <h4 class="text-serif">For this problem, my criteria for algorithm selection was that it has to be a classifcation algorithm<br>
+              that is able to learn <strong>complicated</strong> relationships, <strong>quick</strong> learning time, and has <strong>good accuracy</strong>.</h4>
+          </div>
+        </section>
 
-        <!-- TODO: REFACTOR CODE NOW!!!!!!! -->
+        <!-- Slide #15 - Selected Algorithms -->
+        <section>
+          <div class="wrap">
+            <h2 class="text-context">Algorithm Selection</h2>
+            <ul class="flexblock border">
+              <li>
+                <h2>Extremely Randomized Trees</h2>
+                <p>An ensemble of decision trees with really high randomness values when doing the splits.
+                  They are usually more performant than the rest of the tree-based ensembles.
+                  I found this to be the best algorithm for this problem. <br>
+                  <strong>Accuracy: ~75% | 200 estimators</strong>
+                </p>
+              </li>
+              <li>
+                <h2>K-Nearest Neighbors</h2>
+                <p>This algorithm memorizes the training data space.
+                  For prediction, it places the data in that space.
+                  Then the data's k-nearest neighbors vote on what class it is.
+                  k is the user-defined neighbors, e.g. k=5 is 5 neighbors. <br>
+                  <strong>Accuracy: ~70% | k=5</strong>
+                </p>
+              </li>
+              <li>
+                <h2>AdaBoost</h2>
+                <p>AdaBoost creates a weak learner and makes a better version when it makes mistakes
+                  until it reaches a certain user-defined point. <br>
+                  <strong>Accuracy: ~60% | 500 estimators</strong>
+                </p>
+              </li>
+              <li>
+                <h2>Gradient Boosted Trees</h2>
+                <p>The concept is similar to AdaBoost but the method of checking
+                  whether it's getting better (loss function) is different.
+                  Said to be better than AdaBoost.
+                  This was a close contender to Extremely Randomized Trees. <br>
+                  <strong>Accuracy: ~70% | 100 estimators</strong>
+                </p>
+              </li>
+            </ul>
+          </div>
+        </section>
 
 
+        <!-- Slide #16 - Preprocessing --> 
+        <section>
+          <div class="wrap">
+            <h1 class="text-context">Preprocessing</h1>
+            <hr>
+            <ul class="flexblock steps">
+              <li>
+                <div></div>
+                <h2>Extracted Data</h2>
+                <p>The data extracted from the images, i.e. line lengths and line angles.</p>
+              </li>
+              <li>
+                <div class="process step-2"></div>
+                <h2>Normalization</h2>
+                <p>Normalization transforms the features into numbers that are between zero and one.
+                  This makes it easier for the program to process the numbers because they're in a
+                  predictable and computer-friendly range.
+                </p>
+              </li>
+              <li>
+                <div class="process step-3"></div>
+                <h2>Feature Selection</h2>
+                <p>Only useful features that contribute greatly to the detection are selected, according to previous data.
+                  This allows for better training and prediction performance and accuracy because the program only processes features that
+                  are useful and forgets the less useful ones.</p>
+              </li>
+            </ul>
+          </div>
+        </section>
 
+        <!-- Slide #17 - Train & Evaluate Model -->
 
+        <!-- Slide #18 - Save and Use Model -->
 
+        <!-- Slide #19 - Limitations && Improvements -->
+        <section class="aligncenter">
+          <div class="wrap">
+            <div class="content-center">
+              <h3 class="text-landing">Limitations and Improvements</h3>
+              <ul class="flexblock specs">
+                <li>
+                  <div>
+                      <h2>Lack of better features</h2>
+                      <p>Better features like face meshes, contours, etc. would help the algorithm better understand how a certain facial expression is defined.</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                      <h2>Lack of training samples</h2>
+                      <p>More samples will help increase the accuracy by giving the algorithm a better chance to figure out the pattern from your data.</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                      <h2>Lack of data variety</h2>
+                      <p>More samples will help increase the accuracy by giving the algorithm a better chance to figure out the pattern from your data.</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                      <h2>Serial processing</h2>
+                      <p>Parallel processing of all functions will make the program significantly faster.</p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                      <h2>Not enough processing power</h2>
+                      <p>Better processing power will allow us to use better algorithms like Convolutional Neural Networks.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
 
+        <!-- Slide #20 - Q&A -->
+        <section class="bg-gradient-h">
+          <div class="wrap aligncenter">
+            <h1 class="text-landing">Questions?</h1>
+          </div>
+        </section>
 
-
-        <!-- Slide #13 - Train & Evaluate Model -->
-
-        <!-- Slide #13 - Save and Use Model -->
-
-        <!-- Slide #14 - Limitations && Improvements -->
-
-        <!-- Slide #15 - Q&A -->
-
-        <!-- Slide #16 - Thanks! -->
+        <!-- Slide #21 - Thanks! -->
+        <section class="bg-gradient-h">
+          <div class="wrap aligncenter">
+            <h1 class="text-landing">Thank You!</h1>
+          </div>
+        </section>
       </article>
     </main>
 
