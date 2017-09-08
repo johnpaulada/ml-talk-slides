@@ -236,10 +236,11 @@
                 <h2>With Docker (<em>Recommended</em>)</h2>
                 <ol>
                   <li>Install Docker</li>
-                  <li>Run <code>git clone *Git repository here*</code> in your console</li>
+                  <li>Run <code>git clone https://github.com/johnpaulada/emotion-detection-docker.git</code> in your console</li>
                   <li>Run <code>cd emotion-detection-py</code> in your console</li>
                   <li>Run <code>docker pull johnpaulada/emotion-detection</code> or <code>docker load -i emotion-detection.tar</code>in your console</li>
                   <li>Run <code>docker run -v `pwd`/app:/home/app -it johnpaulada/emotion-detection</code> in your console</li>
+                  <li>Run <code>cd app</code> in your console</li>
                   <li>You're all set!</li>
                 </ul>
               </div>
@@ -253,7 +254,7 @@
                   <li>Install OpenCV</li>
                   <li>Install dlib</li>
                   <li>Install imutils</li>
-                  <li>Run <code>git clone *Git repository here*</code> in your console</li>
+                  <li>Run <code>git clone https://github.com/johnpaulada/emotion-detection-docker.git</code> in your console</li>
                   <li>Run <code>cd emotion-detection-py</code> in your console</li>
                   <li>Run <code>docker run -v `pwd`/app:/home/app -it johnpaulada/emotion-detection</code> in your console</li>
                   <li>You're all set!</li>                  
@@ -362,7 +363,8 @@
             <h3 class="text-landing" style="font-size: 64pt;">Algorithm Research</h3>
             <hr>
             <h4 class="text-serif">For this problem, my criteria for algorithm selection was that it has to be a classifcation algorithm<br>
-              that is able to learn <strong>complicated</strong> relationships, <strong>quick</strong> learning time, and has <strong>good accuracy</strong>.</h4>
+              that is able to learn <strong>complicated</strong> relationships, <strong>quick</strong> learning time, and has <strong>good accuracy</strong>.<br>
+              Fortunately, Microsoft has a nice little <a href="static/microsoft-machine-learning-algorithm-cheat-sheet-v6.pdf">cheatsheet</a> to help us with that.</h4>
           </div>
         </section>
 
