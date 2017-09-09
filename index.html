@@ -157,7 +157,7 @@
               <ul class="flexblock reasons">
                 <li>
                   <h2>Tech Talks</h2>
-                  <p>I share what I know on a variety of topics at tech meetups and in schools.</p>
+                  <p>I share what I know on a variety of topics at tech meetups (PD, Dev8, etc.) and in schools.</p>
                 </li>
                 <li>
                   <h2>Tech Blogging</h2>
@@ -339,7 +339,7 @@
             </div>
             <figure>
               <!-- TODO: Change this image -->
-              <img src="images/fullbody.jpg" alt="John Paul Ada Grad Pic">
+              <img src="images/rheena-dots.jpg" alt="Rheena Face Dots">
             </figure>
           </div>
         </section>
@@ -365,6 +365,75 @@
             <h4 class="text-serif">For this problem, my criteria for algorithm selection was that it has to be a classifcation algorithm<br>
               that is able to learn <strong>complicated</strong> relationships, <strong>quick</strong> learning time, and has <strong>good accuracy</strong>.<br>
               Fortunately, Microsoft has a nice little <a href="static/microsoft-machine-learning-algorithm-cheat-sheet-v6.pdf">cheatsheet</a> to help us with that.</h4>
+          </div>
+        </section>
+
+        <!-- Slide #16 - Preprocessing --> 
+        <section>
+          <div class="wrap">
+            <h1 class="text-context">Preprocessing</h1>
+            <hr>
+            <ul class="flexblock steps">
+              <li>
+                <div></div>
+                <h2>Extracted Data</h2>
+                <p>The data extracted from the images, i.e. line lengths and line angles.</p>
+              </li>
+              <li>
+                <div class="process step-2"></div>
+                <h2>Normalization</h2>
+                <p>Normalization transforms the features into numbers that are <strong>between 0 and 1</strong> or <strong>between -1 and 1</strong>.
+                  This makes it easier for the program to process the numbers because they're in a
+                  predictable and computer-friendly range.
+                </p>
+              </li>
+              <li>
+                <div class="process step-3"></div>
+                <h2>Feature Selection</h2>
+                <p>Only useful features that contribute greatly to the detection are selected, according to previous data.
+                  This allows for better training and prediction performance and accuracy because the program only processes features that
+                  are useful and forgets the less useful ones.</p>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Slide #17 - Train & Evaluate Model -->
+        <section>
+          <div class="wrap">
+            <h1 class="text-context">Training and Evaluation</h1>
+            <hr>
+            <ul class="flexblock steps">
+              <li>
+                <div></div>
+                <h2>Algorithm Selection</h2>
+                <p>After doing research, a collection of algorithms deemed most suited to the job are selected.
+                </p>
+              </li>
+              <li>
+                <div></div>
+                <div class="process step-2"></div>
+                <h2>Hyperparameter Tuning</h2>
+                <p>Each algorithm has parameters to configure the algorithm. They are also known as <strong>hyperparameters</strong>.<br>
+                  In order to get the best results, the best parameters for the given problem should be selected.
+                </p>
+              </li>
+              <li>
+                <div class="process step-3"></div>
+                <h2>Training</h2>
+                <p>After the optimal hyperparameters have been selected, we're ready to train the model.<br>
+                  In this step, the algorithm creates the classifier model we can use for prediction.
+                </p>
+              </li>
+              <li>
+                <div class="process step-4"></div>
+                <h2>Evaluation</h2>
+                <p>The generated classifier model is then evaluated.<br>
+                  The most used metric for determining the quality of the model is <strong>accuracy</strong>.
+                  This measures how accurate it is in guessing the emotion, expressed in percentage.
+                </p>
+              </li>
+            </ul>
           </div>
         </section>
 
@@ -410,40 +479,35 @@
           </div>
         </section>
 
-
-        <!-- Slide #16 - Preprocessing --> 
-        <section>
+        <!-- Slide #18 - Save and Use Model -->
+        <section class="bg-black aligncenter">
+          <span class="background dark" style="background-image:url(images/pietro-jeng-266017.jpg)"></span>
           <div class="wrap">
-            <h1 class="text-context">Preprocessing</h1>
+            <h2 class="text-landing" style="font-size: 64pt;">Saving and using a model</h2>
             <hr>
-            <ul class="flexblock steps">
-              <li>
-                <div></div>
-                <h2>Extracted Data</h2>
-                <p>The data extracted from the images, i.e. line lengths and line angles.</p>
-              </li>
-              <li>
-                <div class="process step-2"></div>
-                <h2>Normalization</h2>
-                <p>Normalization transforms the features into numbers that are between zero and one.
-                  This makes it easier for the program to process the numbers because they're in a
-                  predictable and computer-friendly range.
-                </p>
-              </li>
-              <li>
-                <div class="process step-3"></div>
-                <h2>Feature Selection</h2>
-                <p>Only useful features that contribute greatly to the detection are selected, according to previous data.
-                  This allows for better training and prediction performance and accuracy because the program only processes features that
-                  are useful and forgets the less useful ones.</p>
-              </li>
-            </ul>
+            <h3>You can save models for later use.</h3>
+            <h5>
+              <code>joblib.dump(model, location)</code>
+            </h5>
+            <br>
+            <h3>As you can expect, we can also load models.</h3>
+            <h5>
+              <code>model = joblib.load(location)</code>
+            </h5>
+            <br>
+            <h3>After loading, we can now use the model.</h3>
+            <h5>
+              <code>prediction = model.predict(data)</code>
+            </h5>
           </div>
         </section>
 
-        <!-- Slide #17 - Train & Evaluate Model -->
-
-        <!-- Slide #18 - Save and Use Model -->
+        <!-- Slide #20 - Demo -->
+        <section class="bg-gradient-h">
+          <div class="wrap aligncenter">
+            <h1 class="text-landing" style="font-size: 64pt;">DEMO</h1>
+          </div>
+        </section>
 
         <!-- Slide #19 - Limitations && Improvements -->
         <section class="aligncenter">
