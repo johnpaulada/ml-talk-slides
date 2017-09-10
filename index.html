@@ -256,7 +256,7 @@
                   <li>Install imutils</li>
                   <li>Run <code>git clone https://github.com/johnpaulada/emotion-detection-docker.git</code> in your console</li>
                   <li>Run <code>cd emotion-detection-py</code> in your console</li>
-                  <li>Run <code>docker run -v `pwd`/app:/home/app -it johnpaulada/emotion-detection</code> in your console</li>
+                  <li>Run <code>cd app</code> in your console</li>
                   <li>You're all set!</li>                  
                 </ol>
               </div>
@@ -288,9 +288,9 @@
           <div class="wrap">
             <h1 class="text-landing" style="font-size: 64pt;"><strong>Good Data</strong></h1>
             <hr>
-            <h4 class="text-serif">Good data is needed to get good results in Machine Learning. <br>
-              In this case we need to get a wide variety of faces and emotions. This is so we can avoid <strong>overfitting</strong>. <br>
-              This makes sure that our program can recognize emotion from a face it has not seen before. <br>
+            <h4 class="text-serif">Good data is needed to get good results in Machine Learning.
+              In this case we need to get a wide variety of faces and emotions. This is so we can avoid <strong>overfitting</strong>.
+              This makes sure that our program can recognize emotion from a face it has not seen before.
               For this problem, I downloaded a bunch of different photos from <strong>Google</strong> that shows 4 types of emotions:<br>
               <em>Angry, Sad, Neutral, and Happy</em>
             </h4>
@@ -306,12 +306,12 @@
             <div class="flex-content">
               <h1 class="text-context">Feature Research</h1>
               <br>
-              <p>To help a machine learn well, we need to get the relevant features of our data.<br>
-                When we say features, they're literally the features of, for example, a face. <br>
-                An example feature would be the color of the eyes, skin complexion, etc. <br>
-                Not all features are relevant. <br>
-                Of course, the color of the eyes has nothing to do with our emotions. <br>
-                In order to get the relevant questions, we need to ask the right questions.
+              <p>To help a machine learn well, we need to get the relevant features of our data.
+                When we say features, they're literally the features of, for example, a face.
+                An example feature would be the color of the eyes, skin complexion, etc.
+                Not all features are relevant.
+                Of course, the color of the eyes has nothing to do with our emotions.
+                In order to get the relevant features, we need to ask the right questions.
               </p>
             </div>
           </div>
@@ -362,8 +362,8 @@
           <div class="wrap">
             <h3 class="text-landing" style="font-size: 64pt;">Algorithm Research</h3>
             <hr>
-            <h4 class="text-serif">For this problem, my criteria for algorithm selection was that it has to be a classifcation algorithm<br>
-              that is able to learn <strong>complicated</strong> relationships, <strong>quick</strong> learning time, and has <strong>good accuracy</strong>.<br>
+            <h4 class="text-serif">For this problem, my criteria for algorithm selection was that it has to be a classifcation algorithm
+              that is able to learn <strong>complicated</strong> relationships, <strong>quick</strong> learning time, and has <strong>good accuracy</strong>.
               Fortunately, Microsoft has a nice little <a href="static/microsoft-machine-learning-algorithm-cheat-sheet-v6.pdf">cheatsheet</a> to help us with that.</h4>
           </div>
         </section>
@@ -530,7 +530,7 @@
                 <li>
                   <div>
                       <h2>Lack of data variety</h2>
-                      <p>More samples will help increase the accuracy by giving the algorithm a better chance to figure out the pattern from your data.</p>
+                      <p>Data with a lot of different samples of emotions will allow us to avoid overfitting, which will help us better predict a face we have not encountered before.</p>
                   </div>
                 </li>
                 <li>
